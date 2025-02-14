@@ -7,9 +7,9 @@ local wezterm = require("wezterm")
 
 local color_schemes = {
 	"Catppuccin Mocha",
-	"Catppuccin Frappe",
-	"Catppuccin Macchiato",
-	"Catppuccin Latte",
+	-- "Catppuccin Frappe",
+	-- "Catppuccin Macchiato",
+	-- "Catppuccin Latte",
 	"Darcula (base16)",
 	"Ubuntu",
 	"Calamity",
@@ -41,7 +41,7 @@ local config = {
 	font_size = 14,
 	font = wezterm.font_with_fallback({ "JetBrainsMono Nerd Font", "LXGW WenKai Mono" }),
 
-	color_scheme = color_schemes[1],
+	color_scheme = color_schemes[5],
 
 	front_end = "WebGpu",
 	max_fps = 60,
@@ -62,8 +62,9 @@ local config = {
 	-- window_decorations = "INTEGRATED_BUTTONS | RESIZE",
 	window_decorations = "RESIZE",
 
-	-- window_background_opacity = 1.0,
-	text_background_opacity = 0.8,
+	-- window_background_opacity = 0.8,
+	-- 决定nvim的透明度
+	text_background_opacity = 0.4,
 
 	adjust_window_size_when_changing_font_size = false,
 }
@@ -89,8 +90,8 @@ config.background = {
 		-- hsb = dimmer,
 		hsb = {
 			hue = 1.0,
-			saturation = 0.8,
-			brightness = 0.4,
+			saturation = 0.7,
+			brightness = 0.1,
 		},
 		attachment = { Parallax = 0 },
 	},
