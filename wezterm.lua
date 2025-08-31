@@ -12,6 +12,8 @@ require("config.keybings")(wezterm, config)
 require("config.status")(wezterm, config)
 require("config.tabs")(wezterm, config)
 require("config.plugins")(wezterm, config)
+require("config.action")(wezterm, config)
+require("config.platform")(wezterm, config)
 
 -- config.default_cwd = "/some/path"
 
