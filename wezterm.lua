@@ -11,6 +11,9 @@ require("config.appearance")(wezterm, config)
 require("config.keybings")(wezterm, config)
 require("config.status")(wezterm, config)
 require("config.tabs")(wezterm, config)
+require("config.plugins")(wezterm, config)
+
+-- config.default_cwd = "/some/path"
 
 -- 启动时调整窗口位置，置中
 wezterm.on("window-config-reloaded", function(window, pane)
