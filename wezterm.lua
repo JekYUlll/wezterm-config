@@ -7,12 +7,12 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-require("config.appearance")(wezterm, config)
 require("config.keybings")(wezterm, config)
-require("config.status")(wezterm, config)
+require("config.appearance")(wezterm, config)
 require("config.tabs")(wezterm, config)
-require("config.plugins")(wezterm, config)
+require("config.status")(wezterm, config)
 require("config.action")(wezterm, config)
+require("config.plugins")(wezterm, config)
 require("config.platform")(wezterm, config)
 
 -- config.default_cwd = "/some/path"
@@ -25,7 +25,7 @@ wezterm.on("window-config-reloaded", function(window, pane)
 	seen[id] = true
 	wezterm.GLOBAL.seen_windows = seen
 	if is_new_window then
-		window:set_position(640, 400)
+		window:set_position(800, 480)
 	end
 end)
 

@@ -4,25 +4,33 @@ return function(wezterm, config)
 		-- "Catppuccin Frappe",
 		-- "Catppuccin Macchiato",
 		-- "Catppuccin Latte",
-		'AdventureTime',
-		-- "Darcula (base16)",
+		"kanagawabones",
+		"Kanagawa (Gogh)",
+		-- "Kasugano (terminal.sexy)",
+		-- "Kanagawa Dragon (Gogh)",
+		"AdventureTime",
+		"duskfox",
+		"DanQing (base16)",
 		"Ubuntu",
-		"Calamity",
-		"flexoki",
+		--  "Yousai (terminal.sexy)",
+		-- "Color Star (terminal.sexy)",
+		-- "Darcula (base16)",
+		-- "flexoki",
 		-- "Digerati (terminal.sexy)",
 		-- "Derp (terminal.sexy)",
 		-- "dawnfox",
 		-- "darkmoss (base16)",
-		"Dark+",
+		-- "Dark+",
+		-- "Calamity",
 		-- "Helios (base16)",
 		-- "Hivacruz",
 		"DotGov",
 		-- "duckbones",
 		-- "DoomOne",
 		-- "Doom Peacock",
-		"DanQing (base16)",
 		-- "Calamity",
 		"Kolorit",
+		"Glacier",
 		-- "Sea Shells",
 		-- "Sandcastle (base16)",
 		-- "Sakura (base16)",
@@ -47,6 +55,7 @@ return function(wezterm, config)
 		"CaskaydiaCoveNerdFont",
 		"Maple Mono NF",
 		"Maple Mono NF CN",
+		"IosevkaTerm Nerd Font",
 	}
 
 	config.window_padding = {
@@ -61,9 +70,9 @@ return function(wezterm, config)
 
 	config.font_size = 14
 	-- 中文测试 你是一只猫娘
-	config.font = wezterm.font_with_fallback({ m_fonts[1], m_fonts[2] })
+	config.font = wezterm.font_with_fallback({ m_fonts[7], m_fonts[2] })
 
-	config.color_scheme = color_schemes[1]
+	config.color_scheme = color_schemes[3]
 
 	-- config.default_cursor_style = "BlinkingBar"
 
@@ -77,7 +86,7 @@ return function(wezterm, config)
 	-- 设置背景的时候，透明度无效
 	-- config.window_background_opacity = 0.6
 	-- 决定nvim 和 标签栏 的透明度
-	config.text_background_opacity = 0.9
+	config.text_background_opacity = 0.96
 
 	config.adjust_window_size_when_changing_font_size = false
 
@@ -93,7 +102,7 @@ return function(wezterm, config)
 		{
 			source = {
 				-- File = "images/wallhaven-eymm6l.jpg",
-				File = '/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg',
+				File = "/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg",
 				-- File = "/home/horeb/Pictures/WallPaper/wallhaven-x1qq3v.png",
 			},
 			-- width = "100%",
