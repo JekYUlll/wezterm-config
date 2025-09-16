@@ -1,4 +1,6 @@
 return function(wezterm, config)
+	local use_background = true
+
 	local color_schemes = {
 		"Catppuccin Mocha",
 		-- "Catppuccin Frappe",
@@ -98,29 +100,30 @@ return function(wezterm, config)
 
 	-- config.window_background_image = '/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg'
 
-	config.background = {
-		{
-			source = {
-				-- File = "images/wallhaven-eymm6l.jpg",
-				File = "/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg",
-				-- File = "/home/horeb/Pictures/WallPaper/wallhaven-x1qq3v.png",
+	if use_background then
+		config.background = {
+			{
+				source = {
+					-- File = "images/wallhaven-eymm6l.jpg",
+					File = "/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg",
+					-- File = "/home/horeb/Pictures/WallPaper/wallhaven-x1qq3v.png",
+				},
+				-- width = "100%",
+				repeat_x = "NoRepeat",
+				repeat_y = "NoRepeat",
+				vertical_align = "Top",
+				horizontal_align = "Left",
+				-- hsb = dimmer,
+				hsb = {
+					hue = 1.0,
+					saturation = 0.6,
+					brightness = 0.7,
+				},
+				attachment = { Parallax = 0 },
+				opacity = 0.96,
 			},
-			-- width = "100%",
-			repeat_x = "NoRepeat",
-			repeat_y = "NoRepeat",
-			vertical_align = "Top",
-			horizontal_align = "Left",
-			-- hsb = dimmer,
-			hsb = {
-				hue = 1.0,
-				saturation = 0.6,
-				brightness = 0.7,
-			},
-			attachment = { Parallax = 0 },
-			opacity = 0.96,
-		},
-	}
-
+		}
+	end
 	config.visual_bell = {
 		fade_in_function = "EaseIn",
 		fade_in_duration_ms = 150,
