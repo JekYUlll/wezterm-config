@@ -16,6 +16,8 @@ require("config.plugins")(wezterm, config)
 require("config.platform")(wezterm, config)
 
 -- config.default_cwd = "/some/path"
+-- config.default_prog = { 'vim' }
+config.automatically_reload_config = true
 
 -- 启动时调整窗口位置，置中
 wezterm.on("window-config-reloaded", function(window, pane)

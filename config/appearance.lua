@@ -73,20 +73,33 @@ return function(wezterm, config)
 	config.font_size = 14
 	-- 中文测试 你是一只猫娘
 	config.font = wezterm.font_with_fallback({ m_fonts[7], m_fonts[2] })
+	-- config.freetype_render_target = "Normal"
+	-- config.freetype_load_flags = "NO_HINTING"
+	-- config.freetype_load_target = "Normal"
+	-- 禁用连字
+	-- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
-	config.color_scheme = color_schemes[3]
+	config.color_scheme = color_schemes[2]
+	config.color_schemes = {
+
+	}
 
 	-- config.default_cursor_style = "BlinkingBar"
 
 	config.front_end = "WebGpu"
 	config.max_fps = 60
 	config.scrollback_lines = 9999
+	config.enable_wayland = false
 
 	-- config.window_decorations = "INTEGRATED_BUTTONS | RESIZE"
 	config.window_decorations = "RESIZE"
 
 	-- 设置背景的时候，透明度无效
-	-- config.window_background_opacity = 0.6
+	if use_background then
+		config.window_background_opacity = 1.0
+	else
+		config.window_background_opacity = 0.96
+	end
 	-- 决定nvim 和 标签栏 的透明度
 	config.text_background_opacity = 0.96
 
@@ -104,6 +117,7 @@ return function(wezterm, config)
 		config.background = {
 			{
 				source = {
+					-- If the path is a relative path then it will be expanded relative to the directory containing your wezterm.lua config file.
 					-- File = "images/wallhaven-eymm6l.jpg",
 					File = "/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg",
 					-- File = "/home/horeb/Pictures/WallPaper/wallhaven-x1qq3v.png",
