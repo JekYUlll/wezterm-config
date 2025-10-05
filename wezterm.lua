@@ -27,7 +27,7 @@ wezterm.on("window-config-reloaded", function(window, pane)
 	seen[id] = true
 	wezterm.GLOBAL.seen_windows = seen
 	if is_new_window then
-		window:set_position(600, 400)
+		window:set_position(1000, 400)
 	end
 end)
 
