@@ -19,16 +19,4 @@ require("config.platform")(wezterm, config)
 -- config.default_prog = { 'vim' }
 config.automatically_reload_config = true
 
--- 启动时调整窗口位置，置中
-wezterm.on("window-config-reloaded", function(window, pane)
-	local id = tostring(window:window_id())
-	local seen = wezterm.GLOBAL.seen_windows or {}
-	local is_new_window = not seen[id]
-	seen[id] = true
-	wezterm.GLOBAL.seen_windows = seen
-	if is_new_window then
-		window:set_position(1000, 400)
-	end
-end)
-
 return config

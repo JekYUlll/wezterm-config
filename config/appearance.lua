@@ -1,5 +1,7 @@
 return function(wezterm, config)
-	local use_background = true
+	local use_background = false
+	local opacity = 1.0
+	local text_opacity = 1.0
 
 	local color_schemes = {
 		"Catppuccin Mocha",
@@ -70,7 +72,7 @@ return function(wezterm, config)
 	config.initial_cols = 120
 	config.initial_rows = 28
 
-	config.font_size = 14
+	config.font_size = 12
 	-- 中文测试 你是一只猫娘
 	config.font = wezterm.font_with_fallback({ m_fonts[7], m_fonts[2] })
 	-- config.freetype_render_target = "Normal"
@@ -79,10 +81,7 @@ return function(wezterm, config)
 	-- 禁用连字
 	-- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
-	config.color_scheme = color_schemes[2]
-	config.color_schemes = {
-
-	}
+	config.color_scheme = color_schemes[3]
 
 	-- config.default_cursor_style = "BlinkingBar"
 
@@ -98,10 +97,10 @@ return function(wezterm, config)
 	if use_background then
 		config.window_background_opacity = 1.0
 	else
-		config.window_background_opacity = 0.96
+		config.window_background_opacity = opacity
 	end
 	-- 决定nvim 和 标签栏 的透明度
-	config.text_background_opacity = 0.96
+	config.text_background_opacity = text_opacity
 
 	config.adjust_window_size_when_changing_font_size = false
 
@@ -118,8 +117,9 @@ return function(wezterm, config)
 			{
 				source = {
 					-- If the path is a relative path then it will be expanded relative to the directory containing your wezterm.lua config file.
-					-- File = "images/wallhaven-eymm6l.jpg",
+					-- File =9"images/wallhaven-eymm6l.jpg",
 					File = "/home/horeb/Pictures/WallPaper/wallhaven-eymm6l.jpg",
+					-- File = "../images/wallhaven-eymm6l.jpg",
 					-- File = "/home/horeb/Pictures/WallPaper/wallhaven-x1qq3v.png",
 				},
 				-- width = "100%",
@@ -134,7 +134,7 @@ return function(wezterm, config)
 					brightness = 0.7,
 				},
 				attachment = { Parallax = 0 },
-				opacity = 0.96,
+				opacity = opacity,
 			},
 		}
 	end
@@ -146,7 +146,7 @@ return function(wezterm, config)
 	}
 
 	config.colors = {
-		visual_bell = "#000000",
+		visual_bell = "#111111",
 		-- scrollbar_thumb = "white",
 	}
 
